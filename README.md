@@ -9,7 +9,15 @@ Feel free to transform, distribute or adapt this script according to YOUR needs.
 
 Suggestions are very welcome.
 
-## What's in the zip
+## What's in here
+UBUNTU: 
+This folder contains all of my Ubuntu related scripts.
+1. MotherFossa: this script was originally created for Ubuntu 20.04 release, and I quite enjoyed the pun between Focal Fossa and MotherF(word). This script is currently being kept up to date.
+2. BeverFever: script for Ubuntu 18.04 (deprecated)
+3. BuntuSources: my sources for Ubuntu (deprecated)
+
+
+A collection of 
 Some sripts to different distros. They all basically install the same sofware, but its wrintten to my spceific needs at a given time.
 1. Endeavour - My [EndeavourOS](https://github.com/endeavouros-team) post-install script
 2. MotherFossa - My Ubuntu 20.04 script
