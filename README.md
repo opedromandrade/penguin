@@ -1,5 +1,9 @@
-# TuxScripts
-These are some (very) small/basic scripts to run on a freshly installed Linux system, and install of MY preferred software with little to no work/human intervention. This might also work in some Ubuntu based distros.
+# Penguin
+This repository is a collection a few of my Linux scripts. I’ve made them to make my Linux usage a bit more carefree: set it up once and chill. 
+It used to host just a few scripts for Ubuntu and EndeavorOS, but I’ve decided to use for all my Linux needs.
+
+They are also some (very) small/basic scripts to run on a freshly installed Linux system, by installing some of MY preferred software, with little to no work/human intervention.
+Please find bellow the list for y folders with a short description.
 
 Feel free to transform, distribute or adapt this script according to YOUR needs.
 
