@@ -3,8 +3,7 @@
 # Author: Pedro Andrade - https://github.com/opedromandrade
 # this is just a simple script for Ubuntu
 #
-# v02.2021
-# updated on: 11.2024
+# v11.2025
 #
 # before starting:
 #	1. make sure you have the fastest mirror selected, and also the Canonical Partners Repo enabled
@@ -19,11 +18,11 @@ sudo apt update && sudo apt upgrade -y
 #sudo apt-get install i965-va-driver-shaders intel-media-va-driver-non-free intel-gpu-tools
 
 ## Small things
-# Open JDK - open source implementation of the Java Platform
+# Open JDK - open source implementation of the Java Platform - openjdk-21 is the most recent stable version of open Java Platform
 sudo apt-get install openjdk-21-jre
 
 # GIT - open source-code management tool
-sudo apt-get install git 
+sudo apt-get install git wget
 
 # Synaptic package manager - a graphical package management program for apt
 sudo apt-get install synaptic
