@@ -4,7 +4,7 @@
 # this is just a simple script for Ubuntu
 #
 # v02.2021
-# updated on: 07.2021
+# updated on: 11.2024
 #
 # before starting:
 #	1. make sure you have the fastest mirror selected, and also the Canonical Partners Repo enabled
@@ -16,13 +16,13 @@
 sudo apt update && sudo apt upgrade -y
 
 # Install Intel proprietary stuff
-sudo apt-get install i965-va-driver-shaders intel-media-va-driver-non-free intel-gpu-tools
+#sudo apt-get install i965-va-driver-shaders intel-media-va-driver-non-free intel-gpu-tools
 
 ## Small things
 # Open JDK
 sudo apt-get install openjdk-11-jre
 
-# Git
+# GIT -  source-code management tool
 sudo apt-get install git 
 
 # Synaptic
@@ -36,16 +36,13 @@ sudo apt-get install ubuntu-restricted-extras
 #sudo apt-get install lubuntu-restricted-extras
 
 ## Video players
-# Gnome Videos (formerly known as totem) 
-sudo apt-get install totem
+# mpv media player - mpv is a free (as in freedom) media player
+sudo apt-get install mpv
 
-# VLC
-#sudo apt-get install vlc
+# Gnome Videos (formerly known as totem) 
+#sudo apt-get install totem
 
 ## Audio files software
-# Rhythmbox
-#sudo apt-get install rhythmbox
-
 # Quodlibet and exfalso
 sudo apt-get install quodlibet exfalso
 
@@ -62,23 +59,16 @@ sudo apt-get install sigil
 ## Aditional formats for compression
 sudo apt-get install unace rar zip unzip p7zip p7zip-full p7zip-rar sharutils uudeview arj cabextract
 
-## Multimedia
-## Debian Multimedia
-# Get that key
-#wget http://www.deb-multimedia.org/pool/main/d/deb-multimedia-keyring/deb-multimedia-keyring_2016.8.1_all.deb
-# Make magic
-#sudo dpkg -i deb-multimedia-keyring_2016.8.1_all.deb
-
 ## Image editing
-# Mighty GIMP
-sudo apt-get install gimp gimp-plugin-registry gimp-data-extras
+# GIMP - the GNU Image Manipulation Program
+#sudo apt-get install gimp gimp-plugin-registry gimp-data-extras
 
 ## Photography
-# Rapid Photo Downloader - culling them photos
+# Rapid Photo Downloader is a Linux desktop application that imports photos and video - for culling them photos
 sudo apt-get install rapid-photo-downloader
 
-# Darktable
-sudo apt-get install darktable
+# Darktable - darktable is an open source photography workflow application and raw developer
+#sudo apt-get install darktable
 
 ## Video and Audio creation
 # Kdenlive
