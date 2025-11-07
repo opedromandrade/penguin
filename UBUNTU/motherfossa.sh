@@ -79,8 +79,8 @@ sudo apt-get install audacity
 ## Office tools
 # LibreOffice
 sudo apt-get install libreoffice-gnome libreoffice
-# LibreOffice Portuguese localization et all
-sudo apt-get install myspell-pt-pt hyphen-pt-pt libreoffice-l10n-pt mythes-pt-pt libreoffice-help-pt
+# LibreOffice European Portuguese localization et all
+sudo apt-get install myspell-pt hyphen-pt-pt libreoffice-l10n-pt mythes-pt-pt libreoffice-help-pt
 
 ## Internet Stuff
 # Extra browser [Chromium] - Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web
