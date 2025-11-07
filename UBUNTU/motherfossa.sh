@@ -91,11 +91,11 @@ sudo apt-get install myspell-pt-pt hyphen-pt-pt libreoffice-l10n-pt mythes-pt-pt
 #sudo apt-get install filezilla
 
 # p2p
-# qBittorrent
+# qBittorrent - a cross-platform free and open-source BitTorrent client
 sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable && sudo apt-get update && sudo apt-get install qbittorrent
 
-# Remove Transmission
-sudo apt-get remove transmission-gtk
+# Transmission - a fast, easy, and free BitTorrent client
+sudo apt-get install transmission-gtk
 
 # Firewall
 # GUFW - A graphical user interface for Ubuntu's Uncomplicated Firewall
@@ -106,18 +106,19 @@ sudo apt-get install ufw gufw
 sudo apt-get install net-tools
 
 # VPN stuff
+# Wireguard - an extremely simple yet fast and modern VPN
 #sudo apt-get install wireguard
 
 ## Battery Laptop Tweak
-# Install the magic
+# TLP - is a feature-rich command line utility for Linux, saving laptop battery power without the need to delve deeper into technical details
 sudo apt-get install tlp tlp-rdw
 # Make it happen
 sudo tlp start
 
 # Beautify tools
-sudo apt-get install chrome-gnome-shell gedit-plugin-text-size gnome-tweak-tool
+#sudo apt-get install chrome-gnome-shell gnome-tweak-tool
 
-# NUMiX
+# NUMiX - themes and icons for linux
 sudo apt-get install numix-gtk-theme numix-icon-theme numix-icon-theme-circle
 
 # Clean some more [just for reinsurance]
