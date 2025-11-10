@@ -3,7 +3,7 @@
 # Author: pedro andrade - https://github.com/opedromandrade
 # this is just a simple script for Ubuntu
 #
-# v11.2025
+# updated on: 11.2025
 #
 # before starting:
 #	1. make sure you have the fastest mirror selected, and also the Canonical Partners Repo enabled
