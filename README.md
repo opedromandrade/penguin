@@ -7,7 +7,7 @@ They reflect my personal needs and my linux usage and also my systems. Please fi
 Feel free to transform, distribute or adapt this script according to **YOUR** needs. Suggestions are very welcome.
 
 ## What's in here
-**DEBIAN**
+**DEBIAN**  
 This folder contains a set of scripts specifically for [Debian](https://www.debian.org):
 
 1. debian.sh - A post-install script. It installs stuff automagically to meet my computer needs;
@@ -19,7 +19,7 @@ This folder contains a set of scripts specifically for [Debian](https://www.debi
 **ENDEAVOUR**
 1. My [EndeavourOS](https://github.com/endeavouros-team) post-install script. This script is **probably deprecated**, since I havent used EdeavourOS for quite some time.
 
-**UBUNTU** 
+**UBUNTU**  
 This folder contains all of my [Ubuntu](https://ubuntu.com/) related scripts:
 
 1. MotherFossa - this script was originally created for Ubuntu 20.04 release, and I quite enjoyed the pun between Focal Fossa and MotherF(word). This script is currently being kept up to date;
