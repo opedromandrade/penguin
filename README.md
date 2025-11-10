@@ -14,16 +14,16 @@ Suggestions are very welcome.
 This folder contains a set of scripts pecifically for [Debian](https://www.debian.org):
 
 1. debian.sh - A post-install script. It installs stuff automagically to meet my computer needs.
-2. debian_bt.sh - this script adds bluetooth support for debian (when not present) particularly on debian [XFCE](https://xfce.org).
+2. debian_bt.sh - this script adds bluetooth support for debian (when not present) particularly on debian [XFCE](https://xfce.org)
 3. debian_iPhone.sh - My [Debian](https://www.debian.org/) script to access iPhone.
 4. debian_zoom.sh - My [Debian](https://www.debian.org/) to install zoom.
 5. Sources - My [Debian](https://www.debian.org/) source list for both stable and testing systems.
 
 **UBUNTU** 
 This folder contains all of my [Ubuntu](https://ubuntu.com/) related scripts:
-1. MotherFossa - this script was originally created for Ubuntu 20.04 release, and I quite enjoyed the pun between Focal Fossa and MotherF(word). This script is currently being kept up to date.
+1. MotherFossa - this script was originally created for Ubuntu 20.04 release, and I quite enjoyed the pun between Focal Fossa and MotherF(word). This script is currently being kept up to date
 2. **(deprecated)** BeverFever - script for Ubuntu 18.04
-3. **(deprecated)** BuntuSources - my sources for Ubuntu: since the sources mechanism was updated on Debian and Uuntu folowed, this is no longer valid.
+3. **(deprecated)** BuntuSources - my sources for Ubuntu: since the sources mechanism was updated on Debian and Uuntu folowed, this is no longer valid
 
 
 A collection of 
