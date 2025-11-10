@@ -11,13 +11,13 @@ Suggestions are very welcome.
 
 ## What's in here
 **DEBIAN**
-This folder contains a set of scripts pecifically for [Debian](https://www.debian.org):
+This folder contains a set of scripts specifically for [Debian](https://www.debian.org):
 
 1. debian.sh - A post-install script. It installs stuff automagically to meet my computer needs.
-2. debian_bt.sh - this script adds bluetooth support for debian (when not present) particularly on debian [XFCE](https://xfce.org)
-3. debian_iPhone.sh - My [Debian](https://www.debian.org/) script to access iPhone.
-4. debian_zoom.sh - My [Debian](https://www.debian.org/) to install zoom.
-5. Sources - My [Debian](https://www.debian.org/) source list for both stable and testing systems.
+2. debian_bt.sh - this script adds bluetooth support for debian (when not present), particularly on debian with [XFCE](https://xfce.org) desktop;
+3. debian_iPhone.sh - a script to access and use iPhone on a Debian system;
+4. debian_zoom.sh - small script to install zoom;
+5. Sources - My [Debian](https://www.debian.org/) source list for both stable and testing systems. 
 
 **UBUNTU** 
 This folder contains all of my [Ubuntu](https://ubuntu.com/) related scripts:
