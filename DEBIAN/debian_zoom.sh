@@ -1,8 +1,8 @@
 #!/bin/bash
 # 
-# This script installs Zoom on a Debian system.
+# This script installs Zoom on a Debian system
 # Author: Pedro Andrade - https://github.com/opedromandrade
-# updated on: 20.01.2022
+# updated on: 11.2025
 #
 
 sudo apt get-install wget \
