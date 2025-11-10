@@ -11,9 +11,9 @@ Feel free to transform, distribute or adapt this script according to **YOUR** ne
 This folder contains a set of scripts specifically for [Debian](https://www.debian.org):
 
 1. debian.sh - A post-install script. It installs stuff automagically to meet my computer needs.
-2. debian_bt.sh - this script adds bluetooth support for debian (when not present), particularly on debian with [XFCE](https://xfce.org) desktop;
-3. debian_iPhone.sh - a script to access and use iPhone on a Debian system;
-4. debian_zoom.sh - small script to install zoom;
+2. debian_bt.sh - This script adds bluetooth support for debian (when not present), particularly on debian with [XFCE](https://xfce.org) desktop;
+3. debian_iPhone.sh - A script to access and use iPhone on a Debian system;
+4. debian_zoom.sh - Small script to install zoom;
 5. Sources - My [Debian](https://www.debian.org/) source list for both stable and testing systems. 
 
 **UBUNTU** 
