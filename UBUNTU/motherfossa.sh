@@ -1,6 +1,6 @@
 #!/bin/bash
 # 
-# Author: Pedro Andrade - https://github.com/opedromandrade
+# Author: pedro andrade - https://github.com/opedromandrade
 # this is just a simple script for Ubuntu
 #
 # v11.2025
@@ -91,7 +91,7 @@ sudo apt-get install myspell-pt hyphen-pt-pt libreoffice-l10n-pt mythes-pt-pt li
 
 # p2p
 # qBittorrent - a cross-platform free and open-source BitTorrent client
-sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable && sudo apt-get update && sudo apt-get install qbittorrent
+#sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable && sudo apt-get update && sudo apt-get install qbittorrent
 
 # Transmission - a fast, easy, and free BitTorrent client
 sudo apt-get install transmission-gtk
