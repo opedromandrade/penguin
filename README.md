@@ -1,13 +1,10 @@
 # Penguin
-This repository is a collection a few of my Linux scripts. I’ve made them to make my Linux usage a bit more carefree: set it up once and chill. 
-It used to host just a few scripts for Ubuntu and EndeavorOS, but I’ve decided to use for all my Linux needs.
+This repository is a collection of few linux scripts, I«ve put up together along the years. I’ve made them to make my Linux usage a bit more carefree: set it up once and chill.
+This repo used to host just a few scripts for Ubuntu and EndeavorOS, but I’ve decided to use for **ALL** my Linux needs, distro gnostic.
 
-They are also some (very) small/basic scripts to run on a freshly installed Linux system, by installing some of MY preferred software, with little to no work/human intervention.
-Please find bellow the list for y folders with a short description.
+The reflect my personal needs and my linux usage and also my systems. Please find bellow the list of folders with a short description.
 
-Feel free to transform, distribute or adapt this script according to YOUR needs.
-
-Suggestions are very welcome.
+Feel free to transform, distribute or adapt this script according to **YOUR** needs. Suggestions are very welcome.
 
 ## What's in here
 **DEBIAN**
