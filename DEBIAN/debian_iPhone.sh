@@ -2,7 +2,7 @@
 # 
 # This script installs the tools needed to access your iPhone on a Debian system. Reference article: https://opensource.com/article/21/8/libimobiledevice-iphone-linux
 # Author: pedro andrade - https://github.com/opedromandrade
-# updated on: 19.01.2022
+# updated on: 11.2025
 #
 
 sudo apt install usbmuxd libimobiledevice-1.0-6 libimobiledevice6 libimobiledevice-utils -y \
