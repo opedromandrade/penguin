@@ -15,9 +15,9 @@ Suggestions are very welcome.
 
 **UBUNTU** 
 This folder contains all of my Ubuntu related scripts.
-1. MotherFossa: this script was originally created for Ubuntu 20.04 release, and I quite enjoyed the pun between Focal Fossa and MotherF(word). This script is currently being kept up to date.
-2. BeverFever: script for Ubuntu 18.04 **(deprecated)**
-3. BuntuSources: my sources for Ubuntu **(deprecated)**
+1. MotherFossa - this script was originally created for Ubuntu 20.04 release, and I quite enjoyed the pun between Focal Fossa and MotherF(word). This script is currently being kept up to date.
+2. **(deprecated)** BeverFever - script for Ubuntu 18.04
+3. **(deprecated)** BuntuSources - my sources for Ubuntu: since the sources mechanism was updated on Debian and Uuntu folowed, this is no longer valid.
 
 
 A collection of 
