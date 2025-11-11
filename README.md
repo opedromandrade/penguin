@@ -6,7 +6,7 @@ They reflect my personal needs and my Linux usage and also my systems. Please fi
 
 Feel free to transform, distribute or adapt this script according to **YOUR** needs. Suggestions are very welcome.
 
-## What's in here
+## :mag: What's in here
 **DEBIAN**  
 This folder contains a set of scripts specifically for [Debian](https://www.debian.org):
 
@@ -26,7 +26,7 @@ This folder contains all of my [Ubuntu](https://ubuntu.com/) related scripts:
 2. **(deprecated)** BeverFever - script for Ubuntu 18.04;
 3. **(deprecated)** BuntuSources - my sources for Ubuntu: since the source’s mechanism was updated on Debian and Ubuntu followed, this is no longer valid.
 
-## How to use
+## :information_source: How to use
 
 1. [Download [zip]](https://github.com/opedromandrade/penguin/archive/master.zip)
 2. Extract the desired script
