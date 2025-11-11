@@ -1,4 +1,4 @@
-# Penguin
+# :penguin: Penguin
 This repository is a collection of few linux scripts, I've put up together along the years. I’ve made them to make my Linux usage a bit more carefree: set it up once and chill.
 This repo used to host just a few scripts for Ubuntu and EndeavorOS, but I’ve decided to use for **ALL** my Linux needs, distro gnostic.
 
