@@ -28,7 +28,7 @@ This folder contains all of my [Ubuntu](https://ubuntu.com/) related scripts:
 
 ## How to use
 
-1. [Download [zip]](https://github.com/opedromandrade/buntuscripts/archive/master.zip)
+1. [Download [zip]](https://github.com/opedromandrade/penguin/archive/master.zip)
 2. Extract the desired script
 3. Give permissions to run the file
 
