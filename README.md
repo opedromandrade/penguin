@@ -42,3 +42,5 @@ Run the following block to clone the repository and enter it immediately:
 ```bash
 git clone [https://github.com/opedromandrade/penguin.git](https://github.com/opedromandrade/penguin.git)
 cd penguin
+
+## 🚀 How to Run the Scripts
