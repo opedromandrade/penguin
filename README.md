@@ -44,7 +44,7 @@ Comprehensive deployment resources optimized specifically for Canonical's **Ubun
 Download the repository and open your terminal inside the project directory using one of the methods below.
 
 ### Method A: The Web Download Way
-1. Click to **[Download Repository ZIP Archive](https://github.com/opedromandrade/penguin/archive/master.zip)**.
+1. Click 👉 **[Download Repository ZIP Archive](https://github.com/opedromandrade/penguin/archive/master.zip)**.
 2. Extract the archive using your file manager, or run:
    ```bash
    unzip penguin-master.zip
