@@ -41,6 +41,6 @@ Before running anything, download the repository and open your terminal inside t
 Run the following block to clone the repository and enter it immediately:
 ```bash
 git clone [https://github.com/opedromandrade/penguin.git](https://github.com/opedromandrade/penguin.git)
-cd penguin
+cd penguin```
 
 ## 🚀 How to Run the Scripts
