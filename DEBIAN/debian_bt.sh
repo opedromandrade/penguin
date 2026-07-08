@@ -1,6 +1,6 @@
 #!/bin/bash
 # ==============================================================================
-# 🐧 Debian Fresh Install Bluetooth & Audio Setup Script
+# 🐧 Debian Bluetooth Install & Audio Setup Script
 # Author: pedro andrade - https://github.com/opedromandrade
 # Updated on: 07.2026
 # Description: Installs Blueman, PipeWire/PulseAudio Bluetooth integrations,
