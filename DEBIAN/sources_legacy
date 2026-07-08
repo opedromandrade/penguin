@@ -1,0 +1,22 @@
+#------------------------------------------------------------------------------#
+# 🐧             Legacy One-Line Format (/etc/apt/sources.list)                #
+#------------------------------------------------------------------------------#
+# 🚀                       Current Stable Version: 13                          #
+#------------------------------------------------------------------------------#
+# 🧑‍💻 Updated: 07.2026 | Pedro Andrade - https://github.com/opedromandrade     #
+
+###### 🌐 Debian Main Repos
+deb http://deb.debian.org/debian/ trixie main restricted universe multiverse
+#deb-src http://deb.debian.org/debian/ trixie main restricted universe multiverse
+
+###### 🛡️ Debian Security Updates
+deb http://security.debian.org/debian-security/ trixie-security main restricted universe multiverse
+deb-src http://security.debian.org/debian-security/ trixie-security main restricted universe multiverse
+
+###### 🔄 Major Bug Fix Updates
+deb http://deb.debian.org/debian/ trixie-updates main restricted universe multiverse
+#deb-src http://deb.debian.org/debian/ trixie-updates main restricted universe multiverse
+
+###### 🧪 Debian Backports
+deb http://deb.debian.org/debian/ trixie-backports main restricted universe multiverse
+#deb-src http://deb.debian.org/debian/ trixie-backports main restricted universe multiverse
