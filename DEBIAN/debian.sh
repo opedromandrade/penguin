@@ -1,122 +1,186 @@
 #!/bin/bash
-# 
-# This script installs the software I need on a fresh installed Debian system. Feel free to adapt and to edit at your liking. After install, it's advised to reboot.
+# ==============================================================================
+# 🐧 Debian Fresh Install Post-Setup Script
+# Description: Automates the installation of essential packages on Debian.
+# Guidance: Run this script with sudo. Rebooting after completion is advised.
+# ==============================================================================
 
-#Remove intel open drivers
-#sudo apt-get remove intel-media-va-driver
+# Exit immediately if a command exits with a non-zero status
+set -e
 
-# Update system
-sudo apt clean && \
-sudo apt update && \
-sudo apt dist-upgrade -y && \
-sudo apt --fix-broken install -y
+# --- Colors for Terminal Output ---
+NC='\033[0m' # No Color
+echo -e "${NC}" # Reset terminal color defaults safely
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+RED='\033[0;31m'
+BLUE='\033[0;34m'
 
-### Hardware
-# Install Intel proprietary stuff - https://wiki.debian.org/HardwareVideoAcceleration
-#sudo apt-get install i965-va-driver-shaders intel-media-va-driver-non-free intel-gpu-tools
+# --- Logging Function ---
+log() {
+    local type="$1"
+    local message="$2"
+    case "$type" in
+        "info")    echo -e "${BLUE}[INFO]${NC} $message" ;;
+        "success") echo -e "${GREEN}[SUCCESS]${NC} $message" ;;
+        "warn")    echo -e "${YELLOW}[WARN]${NC} $message" ;;
+        "error")   echo -e "${RED}[ERROR]${NC} $message" ;;
+    esac
+}
 
-## Battery Laptop Tweak
-# Install the magic
-#sudo apt-get install tlp tlp-rdw
-# Make it happen
-#sudo tlp start
+# --- Root Privilege Check ---
+if [ "$EUID" -ne 0 ]; then
+    log "error" "❌ Please run this script with sudo or as root."
+    exit 1
+fi
 
-### Software
-# Instal bash-completion
-sudo apt-get install bash-completion
+log "info" "🚀 Starting Debian post-installation environment setup..."
 
-# Aditional formats for compression
-sudo apt-get install unace rar zip unzip p7zip p7zip-full p7zip-rar sharutils uudeview arj cabextract
+# ==============================================================================
+# 1. SYSTEM UPDATE & REPAIR
+# ==============================================================================
+log "info" "🔄 Updating package repositories and upgrading system components..."
+apt clean
+apt update
+apt dist-upgrade -y
+apt --fix-broken install -y
 
-## Small things
-# Open JDK
-sudo apt-get install openjdk-25-jre
+# ==============================================================================
+# 2. HARDWARE & LAPTOP OPTIMIZATIONS (Optional / Commented out)
+# ==============================================================================
+# log "info" "🔧 Configuring hardware drivers..."
+# apt remove intel-media-va-driver -y
+# apt install -y i965-va-driver-shaders intel-media-va-driver-non-free intel-gpu-tools
+# apt install -y tlp tlp-rdw && tlp start
 
-# Handy things
-sudo apt-get install net-tools git wget
+# ==============================================================================
+# 3. SOFTWARE INSTALLATION BLOCKS
+# ==============================================================================
 
-# Htop and Neofetch
-sudo apt-get install gvfs htop neofetch strace
+# Core System Utilities
+CORE_UTILS=(
+    bash-completion
+    net-tools
+    git
+    wget
+    gvfs
+    htop
+    neofetch
+    strace
+    menu
+    menu-l10n
+)
+log "info" "🛠️ Installing core system and terminal utilities..."
+apt install -y "${CORE_UTILS[@]}"
 
-# Menu
-sudo apt-get install menu menu-l10n
+# Archive & Compression Tools
+COMPRESSION_TOOLS=(
+    unace
+    rar
+    zip
+    unzip
+    p7zip
+    p7zip-full
+    p7zip-rar
+    sharutils
+    uudeview
+    arj
+    cabextract
+)
+log "info" "📦 Installing compression and archive formats..."
+apt install -y "${COMPRESSION_TOOLS[@]}"
 
-## Office tools
-# LibreOffice
-sudo apt-get install libreoffice
+# Development Environments
+log "info" "☕ Installing Java Development environments..."
+apt install -y openjdk-25-jre
 
-# LibreOffice Portuguese localization et all
-sudo apt-get install myspell-pt hyphen-pt-pt libreoffice-l10n-pt mythes-pt-pt hunspell-pt-pt libreoffice-help-pt
+# Office Suite & Portuguese Localization
+OFFICE_APPS=(
+    libreoffice
+    myspell-pt
+    hyphen-pt-pt
+    libreoffice-l10n-pt
+    mythes-pt-pt
+    hunspell-pt-pt
+    libreoffice-help-pt
+)
+log "info" "📝 Installing LibreOffice and Portuguese language dictionaries..."
+apt install -y "${OFFICE_APPS[@]}"
 
-## Some extra zing to Debian
-# TrueType Fonts
-sudo apt-get install ttf-mscorefonts-installer
+# Typography & Fonts
+log "info" "🔤 Accepting EULA and installing TrueType Microsoft Fonts..."
+echo ttf-mscorefonts-installer msttcorefont/accepted-msteula select true | debconf-set-selections
+DEBIAN_FRONTEND=noninteractive apt install -y ttf-mscorefonts-installer
 
-## Multimedia
-# DVD support
-#sudo apt-get install libdvdcss2
+# Audio Players & Tag Editors
+AUDIO_SOFTWARE=(
+    quodlibet
+    exfalso
+    easytag
+)
+log "info" "🎵 Installing audio playback, management, and tagging software..."
+apt install -y "${AUDIO_SOFTWARE[@]}"
 
-## Audio software
-# Quodlibet and exfalso
-sudo apt-get install quodlibet exfalso
+# Audio Editing & Production
+AUDIO_EDITING=(
+    audacity
+)
+log "info" "🎙️ Installing audio recording and multi-track wave editors..."
+apt install -y "${AUDIO_EDITING[@]}"
 
-# EasyTAG
-sudo apt-get install easytag
+# Digital Books & E-Pub Authoring
+BOOK_TOOLS=(
+    sigil
+    sigil-data
+    calibre
+)
+log "info" "📚 Installing e-book libraries and EPUB cataloging tools..."
+apt install -y "${BOOK_TOOLS[@]}"
 
-## Book stuff
-# Sigil
-sudo apt-get install sigil sigil-data
+# Image Editing & Photography
+IMAGE_EDITING=(
+    gimp
+    gimp-plugin-registry
+    gimp-data-extras
+    rapid-photo-downloader
+    darktable
+)
+log "info" "📸 Installing graphic editors and photography culling/processing tools..."
+apt install -y "${IMAGE_EDITING[@]}"
 
-# Calibre
-sudo apt-get install calibre
+# Video Creation & DVD Playback
+VIDEO_SOFTWARE=(
+    libdvdcss2
+    shotcut
+    simplescreenrecorder
+)
+log "info" "🎬 Installing video editing, screen recording, and DVD support codecs..."
+apt install -y "${VIDEO_SOFTWARE[@]}"
 
-## Image editing
-# Mighty GIMP
-#sudo apt-get install gimp gimp-plugin-registry gimp-data-extras
+# Security & Desktop Personalization
+DESKTOP_POLISH=(
+    gufw              # Firewall GUI
+    dmz-cursor-theme  # Visual Polish
+)
+log "info" "🎨 Installing desktop themes and local firewall security panels..."
+apt install -y "${DESKTOP_POLISH[@]}"
 
-## Photography
-# Rapid Photo Downloader - culling them photos
-#sudo apt-get install rapid-photo-downloader
+# ==============================================================================
+# 4. OPTIONAL NETWORKING & BROWSER SUITES (Uncomment to enable)
+# ==============================================================================
+# log "info" "🌐 Installing commented networking suites..."
+# apt install -y chromium chromium-l10n libva-drm2 libva-x11-2 filezilla qbittorrent
+# apt install -y openvpn network-manager-openvpn wireguard
+# apt install -y numix-gtk-theme numix-icon-theme numix-icon-theme-circle
 
-# Darktable
-#sudo apt-get install darktable
+# ==============================================================================
+# 5. SYSTEM CLEANUP & WRAP UP
+# ==============================================================================
+log "info" "🧹 Optimizing disk space and removing residual installation caches..."
+apt autoremove -y
+apt autoclean -y
 
-## Video and Audio creation
-# ShotCut
-#sudo apt-get install shotcut
-
-# Audacity
-sudo apt-get install audacity
-
-#Simple Screen Recorder
-#sudo apt-get install simplescreenrecorder
-
-## Internet Stuff
-# Extra browser Chromium and some extra stuff. For more info: https://wiki.debian.org/Chromium#Drivers_and_libraries_according_to_your_hardware
-#sudo apt-get install chromium chromium-l10n libva-drm2 libva-x11-2
-
-# FTP support
-#sudo apt-get install filezilla
-
-# p2p
-#sudo apt-get install qbittorrent
-
-## VPN stuff
-#sudo apt-get install openvpn network-manager-openvpn wireguard
-
-# Firewall
-sudo apt-get install gufw
-
-## Beautify
-# NUMiX
-#sudo apt-get install numix-gtk-theme numix-icon-theme numix-icon-theme-circle
-
-# Cursor theme
-sudo apt-get install dmz-cursor-theme
-
-# Clean some more [just for reinsurance]
-sudo apt autoremove && sudo apt autoclean -y
-
-# Gotta reboot now
-echo $'\n'$"*** Follow the white rabbit & reboot ***"
-exit
+log "success" "🎉 All software packages processed successfully!"
+echo ""
+log "warn" "🐇 *** Follow the white rabbit & reboot your machine now ***"
+echo ""
