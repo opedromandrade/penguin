@@ -1,9 +1,10 @@
 #!/bin/bash
 # ==============================================================================
-# 🐧 Debian Bluetooth Install Script
+# 🐧 Debian Fresh Install Bluetooth & Audio Setup Script
 # Author: pedro andrade - https://github.com/opedromandrade
 # Updated on: 07.2026
-# Description: Installs and enables Bluetooth on a fresh Debian system.
+# Description: Installs Blueman, PipeWire/PulseAudio Bluetooth integrations,
+#              and enables the system Bluetooth stack.
 # Guidance: Run this script with sudo. Rebooting after completion is advised.
 # ==============================================================================
 
@@ -36,14 +37,20 @@ if [ "$EUID" -ne 0 ]; then
     exit 1
 fi
 
-log "info" "🚀 Starting Debian Bluetooth configuration..."
+log "info" "🚀 Starting Debian Bluetooth & Audio configuration..."
 
 # ==============================================================================
-# 1. PACKAGE INSTALLATION
+# 1. PACKAGE INSTALLATION (Bluetooth & Audio Drivers)
 # ==============================================================================
-log "info" "📦 Installing Blueman Bluetooth manager and utilities..."
+log "info" "📦 Updating package listings..."
 apt update
+
+log "info" "📦 Installing Blueman Bluetooth manager..."
 apt install -y blueman
+
+log "info" "🎵 Installing PipeWire PulseAudio-compatibility layers and Bluetooth audio codecs..."
+# Installs modern system audio paths and the plugins required for high-quality audio profiles (A2DP, HSP/HFP)
+apt install -y pipewire-audio pipewire-pulse wireplumber
 
 # ==============================================================================
 # 2. SERVICE CONFIGURATION
@@ -51,7 +58,7 @@ apt install -y blueman
 log "info" "🔄 Enabling and starting the Bluetooth system service..."
 systemctl enable --now bluetooth
 
-log "success" "🎉 Bluetooth software and system services configured successfully!"
+log "success" "🎉 Bluetooth hardware and wireless audio layers configured successfully!"
 echo ""
 
 # ==============================================================================
@@ -66,7 +73,7 @@ case "$response" in
         reboot
         ;;
     *)
-        log "info" "Reboot skipped. Please remember to reboot later to apply all Bluetooth configurations."
+        log "info" "Reboot skipped. Please remember to reboot later to apply all Bluetooth and audio configurations."
         echo ""
         ;;
 esac
