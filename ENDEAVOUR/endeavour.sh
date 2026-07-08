@@ -185,7 +185,7 @@ case "$response" in
     [yY][eE][sS]|[yY]) 
         log "warn" "🐇 *** Follow the white rabbit & reboot your machine now ***"
         echo ""
-        sleep 2
+        sleep 5
         sudo reboot
         ;;
     *)
