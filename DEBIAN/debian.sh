@@ -137,8 +137,7 @@ log "info" "📚 Installing EPUB authoring tools from repositories..."
 apt install -y "${BOOK_TOOLS[@]}"
 
 log "info" "🌐 Downloading and installing latest Calibre suite from official binary stream..."
-# Since the script is already running as root, sudo -v / sudo sh are omitted inside the pipeline
-wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sh /dev/stdin
+wget -nv -O- https://calibre-ebook.com | sh /dev/stdin
 
 # Image Editing & Photography
 IMAGE_EDITING=(
@@ -185,5 +184,21 @@ apt autoclean -y
 
 log "success" "🎉 All software packages processed successfully!"
 echo ""
-log "warn" "🐇 *** Follow the white rabbit & reboot your machine now ***"
-echo ""
+
+# ==============================================================================
+# 6. INTERACTIVE REBOOT PROMPT
+# ==============================================================================
+# Read from standard terminal input even if running in a pipe pipeline
+read -p "🔄 Do you want to reboot the system now? (y/N): " response
+case "$response" in
+    [yY][eE][sS]|[yY]) 
+        log "warn" "🐇 *** Follow the white rabbit & reboot your machine now ***"
+        echo ""
+        sleep 2
+        reboot
+        ;;
+    *)
+        log "info" "Reboot skipped. Please remember to reboot later to apply all configurations."
+        echo ""
+        ;;
+esac
