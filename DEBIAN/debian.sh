@@ -168,7 +168,23 @@ log "info" "🎨 Installing desktop themes and local firewall security panels...
 apt install -y "${DESKTOP_POLISH[@]}"
 
 # ==============================================================================
-# 4. OPTIONAL NETWORKING & BROWSER SUITES (Uncomment to enable)
+# 4. THIRD-PARTY REPOSITORY FRAMEWORKS (Flatpak Setup)
+# ==============================================================================
+log "info" "📦 Setting up Flatpak application framework..."
+apt install -y flatpak
+
+# Install the GNOME Software Flatpak plugin (common for most Debian environments)
+# If you use KDE, change 'gnome-software-plugin-flatpak' to 'plasma-discover-backend-flatpak'
+if apt-cache show gnome-software-plugin-flatpak > /dev/null 2>&1; then
+    apt install -y gnome-software-plugin-flatpak
+fi
+
+# Add the official Flathub repository repository globally
+log "info" "🌐 Adding Flathub repository remote universe..."
+flatpak remote-add --if-not-exists flathub https://flathub.org
+
+# ==============================================================================
+# 5. OPTIONAL NETWORKING & BROWSER SUITES (Uncomment to enable)
 # ==============================================================================
 # log "info" "🌐 Installing commented networking suites..."
 # apt install -y chromium chromium-l10n libva-drm2 libva-x11-2 filezilla qbittorrent
@@ -176,7 +192,7 @@ apt install -y "${DESKTOP_POLISH[@]}"
 # apt install -y numix-gtk-theme numix-icon-theme numix-icon-theme-circle
 
 # ==============================================================================
-# 5. SYSTEM CLEANUP & WRAP UP
+# 6. SYSTEM CLEANUP & WRAP UP
 # ==============================================================================
 log "info" "🧹 Optimizing disk space and removing residual installation caches..."
 apt autoremove -y
@@ -186,19 +202,18 @@ log "success" "🎉 All software packages processed successfully!"
 echo ""
 
 # ==============================================================================
-# 6. INTERACTIVE REBOOT PROMPT
+# 7. INTERACTIVE REBOOT PROMPT
 # ==============================================================================
-# Read from standard terminal input even if running in a pipe pipeline
 read -p "🔄 Do you want to reboot the system now? (y/N): " response
 case "$response" in
     [yY][eE][sS]|[yY]) 
         log "warn" "🐇 *** Follow the white rabbit & reboot your machine now ***"
         echo ""
-        sleep 5
+        sleep 2
         reboot
         ;;
     *)
-        log "info" "Reboot skipped. Please remember to reboot later to apply all configurations."
+        log "info" "Reboot skipped. Please remember to reboot later to apply all configurations (especially Flatpak paths)."
         echo ""
         ;;
 esac
