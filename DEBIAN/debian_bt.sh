@@ -2,7 +2,7 @@
 # ==============================================================================
 # 🐧 Debian Fresh Install Bluetooth Setup Script
 # Author: pedro andrade - https://github.com/opedromandrade
-# Updated on: 11.2025
+# Updated on: 07.2026
 # Description: Installs and enables Bluetooth on a fresh Debian system.
 # Guidance: Run this script with sudo. Rebooting after completion is advised.
 # ==============================================================================
