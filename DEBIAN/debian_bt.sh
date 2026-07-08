@@ -1,6 +1,6 @@
 #!/bin/bash
 # ==============================================================================
-# 🐧 Debian Fresh Install Bluetooth Setup Script
+# 🐧 Debian Bluetooth Install Script
 # Author: pedro andrade - https://github.com/opedromandrade
 # Updated on: 07.2026
 # Description: Installs and enables Bluetooth on a fresh Debian system.
