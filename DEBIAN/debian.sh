@@ -128,14 +128,17 @@ AUDIO_EDITING=(
 log "info" "🎙️ Installing audio recording and multi-track wave editors..."
 apt install -y "${AUDIO_EDITING[@]}"
 
-# Digital Books & E-Pub Authoring
+# Digital Books & E-Pub Authoring (Calibre from Official Site)
 BOOK_TOOLS=(
     sigil
     sigil-data
-    calibre
 )
-log "info" "📚 Installing e-book libraries and EPUB cataloging tools..."
+log "info" "📚 Installing EPUB authoring tools from repositories..."
 apt install -y "${BOOK_TOOLS[@]}"
+
+log "info" "🌐 Downloading and installing latest Calibre suite from official binary stream..."
+# Since the script is already running as root, sudo -v / sudo sh are omitted inside the pipeline
+wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sh /dev/stdin
 
 # Image Editing & Photography
 IMAGE_EDITING=(
