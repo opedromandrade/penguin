@@ -36,9 +36,9 @@ Before running anything, download the repository and open your terminal inside t
 1. Click 👉 **[Download Repository ZIP Archive](https://github.com/opedromandrade/penguin/archive/master.zip)**.
 2. Extract the `.zip` file using your file manager or run `unzip penguin-master.zip` in your terminal.
 3. Open your terminal and navigate to the extracted folder.
-4. `cd script_you_want /`
-   `chmod +x script.sh`
-   `sudo ./script.sh`
+4. cd debian/
+chmod +x debian.sh
+sudo ./debian.sh
 
 ### Method B: The Git Way
 Run the following block to clone the repository and enter it immediately:
