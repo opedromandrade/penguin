@@ -1,6 +1,6 @@
 #!/bin/bash
 # ==============================================================================
-# 🦅 EndeavourOS Fresh Install Post-Setup Script
+# 🦅 EndeavourOS Post-Install Script
 # Author: pedro andrade - https://github.com/opedromandrade                       
 # Updated on: 07.2026                                                            
 # Description: Automates the installation of essential packages on EndeavourOS.
