@@ -1,124 +1,195 @@
 #!/bin/bash
-# 
-# Author: Pedro Andrade - https://github.com/opedromandrade
-# this is just a simple post-install script for EndeavourOS
-#
-# v01.2022
-# updated on: 15/01/2022
-#
-# before starting:
-#	1. make sure you have the fastest mirror selected, and also the Canonical Partners Repo enabled
-#	2. comment lines out to disable stuff you don't want install/remove
+# ==============================================================================
+# 🦅 EndeavourOS Fresh Install Post-Setup Script
+# Author: pedro andrade - https://github.com/opedromandrade                       
+# Updated on: 07.2026                                                            
+# Description: Automates the installation of essential packages on EndeavourOS.
+# Guidance: Run this script as a NORMAL USER (not root). It will ask for sudo.
+# ==============================================================================
 
-### Let's roll!
+# Exit immediately if a command exits with a non-zero status
+set -e
 
-## Let's update stuff
-sudo pacman -Syyu
+# --- Colors for Terminal Output ---
+NC='\033[0m' # No Color
+echo -e "${NC}" # Reset terminal color defaults safely
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+RED='\033[0;31m'
+BLUE='\033[0;34m'
 
-## Update mirrors and stuff
-yay -Syu
+# --- Logging Function ---
+log() {
+    local type="$1"
+    local message="$2"
+    case "$type" in
+        "info")    echo -e "${BLUE}[INFO]${NC} $message" ;;
+        "success") echo -e "${GREEN}[SUCCESS]${NC} $message" ;;
+        "warn")    echo -e "${YELLOW}[WARN]${NC} $message" ;;
+        "error")   echo -e "${RED}[ERROR]${NC} $message" ;;
+    esac
+}
 
-## Install BlueTooth
-sudo pacman -S blueberry
+# --- Root Privilege Guard ---
+if [ "$EUID" -eq 0 ]; then
+    log "error" "❌ Please do NOT run this script as root or with sudo directly."
+    log "error" "   AUR helpers like 'yay' cannot compile packages as root."
+    exit 1
+fi
 
-## Small things
-# OpenJDK
-sudo pacman -S jdk-openjdk
+log "info" "🚀 Starting EndeavourOS post-installation environment setup..."
 
-# Git
-sudo pacman -S git
+# ==============================================================================
+# 1. SYSTEM UPDATE & REPAIR
+# ==============================================================================
+log "info" "🔄 Updating package repositories and upgrading system components..."
+sudo pacman -Syyu --noconfirm
+yay -Syu --noconfirm
 
-## Aditional formats for compression
-sudo pacman -S sharutils uudeview arj cabextract unace unrar zip unzip p7zip
+# ==============================================================================
+# 2. HARDWARE & LAPTOP OPTIMIZATIONS (Optional / Commented out)
+# ==============================================================================
+# log "info" "🔧 Configuring hardware drivers and battery management..."
+# sudo pacman -S --noconfirm tlp blueberry
+# sudo tlp start
 
-## Video players
-# MPV - https://mpv.io
-#yay -S mpv-build-git
+# ==============================================================================
+# 3. SOFTWARE INSTALLATION BLOCKS (Pacman Native)
+# ==============================================================================
 
-# VLC
-#sudo pacman -S vlc
+# Core System Utilities
+CORE_UTILS=(
+    bash-completion
+    net-tools
+    git
+    wget
+    gvfs
+    htop
+    neofetch
+    strace
+)
+log "info" "🛠️ Installing core system and terminal utilities..."
+sudo pacman -S --noconfirm "${CORE_UTILS[@]}"
 
-## Audio players
-# Rhythmbox
-#sudo pacman -S install rhythmbox
+# Archive & Compression Tools
+COMPRESSION_TOOLS=(
+    unace
+    unrar
+    zip
+    unzip
+    p7zip
+    sharutils
+    uudeview
+    arj
+    cabextract
+)
+log "info" "📦 Installing compression and archive formats..."
+sudo pacman -S --noconfirm "${COMPRESSION_TOOLS[@]}"
 
-# Quodlibet and exfalso
-sudo pacman -S quodlibet
+# Development Environments
+log "info" "☕ Installing Java Development environments..."
+sudo pacman -S --noconfirm jdk-openjdk
 
-# EasyTAG
-sudo pacman -S easytag
+# Office Suite & Portuguese Localization
+OFFICE_APPS=(
+    libreoffice-fresh
+    libreoffice-breeze-icons
+)
+log "info" "📝 Installing LibreOffice..."
+sudo pacman -S --noconfirm "${OFFICE_APPS[@]}"
 
-## Book stuff
-# Calibre - https://calibre-ebook.com
-sudo pacman -S calibre
+# Audio Players & Tag Editors
+AUDIO_SOFTWARE=(
+    quodlibet
+    easytag
+)
+log "info" "🎵 Installing audio playback, management, and tagging software..."
+sudo pacman -S --noconfirm "${AUDIO_SOFTWARE[@]}"
 
-# Sigil - http://sigil-ebook.comd
-sudo pacman -S sigil
+# Audio Editing & Production
+log "info" "🎙️ Installing audio recording and multi-track wave editors..."
+sudo pacman -S --noconfirm audacity
 
-## Multimedia
-## Image editing
-# Mighty GIMP
-sudo pacman -S gimp
+# Digital Books & E-Pub Authoring (Calibre is natively cutting-edge on Arch)
+BOOK_TOOLS=(
+    sigil
+    calibre
+)
+log "info" "📚 Installing EPUB authoring tools and Calibre suite..."
+sudo pacman -S --noconfirm "${BOOK_TOOLS[@]}"
 
-## Photography
-# Rapid Photo Downloader - culling them photos
-sudo pacman -S rapid-photo-downloader
+# Image Editing & Photography
+IMAGE_EDITING=(
+    gimp
+    gimp-data-extras
+    rapid-photo-downloader
+    darktable
+)
+log "info" "📸 Installing graphic editors and photography processing tools..."
+sudo pacman -S --noconfirm "${IMAGE_EDITING[@]}"
 
-# Darktable
-sudo pacman -S darktable
+# Video Creation & System Polish
+VIDEO_SOFTWARE=(
+    shotcut
+    simplescreenrecorder
+    gufw
+    xcursor-dmz
+)
+log "info" "🎬 Installing video tools, firewall GUI, and cursor enhancements..."
+sudo pacman -S --noconfirm "${VIDEO_SOFTWARE[@]}"
 
-## Video and Audio creation
-# Kdenlive
-#sudo pacman -S kdenlive
+# ==============================================================================
+# 4. AUR SOFTWARE & LOCALIZATIONS (via Yay)
+# ==============================================================================
+log "info" "🌟 Installing packages from the Arch User Repository (AUR)..."
 
-# Shotcut
-#sudo pacman -S shotcut
+# TrueType Microsoft Fonts & Portuguese Dictionaries
+AUR_PACKAGES=(
+    ttf-ms-fonts
+    hunspell-pt-pt
+    hyphen-pt
+)
+yay -S --noconfirm "${AUR_PACKAGES[@]}"
 
-# Audacity
-sudo pacman -S audacity
+# ==============================================================================
+# 5. THIRD-PARTY REPOSITORY FRAMEWORKS (Flatpak Setup)
+# ==============================================================================
+log "info" "📦 Setting up Flatpak application framework..."
+sudo pacman -S --noconfirm flatpak
 
-#Simple Screen Recorder
-sudo pacman -S simplescreenrecorder
+log "info" "🌐 Adding Flathub repository remote universe..."
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
-## Office tools
-# LibreOffice
-sudo pacman -S libreoffice libreoffice-breeze-icons
-# LibreOffice Portuguese localization et all
-yay -S hunspell-pt_pt hunspell-pt_pt-preao hyphen-pt_pt
+# ==============================================================================
+# 6. OPTIONAL NETWORKING & BROWSER SUITES (Uncomment to enable)
+# ==============================================================================
+# log "info" "🌐 Installing commented networking suites..."
+# sudo pacman -S --noconfirm chromium opera filezilla qbittorrent transmission-gtk openvpn networkmanager-openvpn wireguard-tools
+# yay -S --noconfirm numix-gtk-theme numix-circle-icon-theme-git
 
-## Internet Stuff
-# Extra browser [Chromium or Opera]
-sudo pacman -S chromium opera
+# ==============================================================================
+# 7. SYSTEM CLEANUP & WRAP UP
+# ==============================================================================
+log "info" "🧹 Optimizing disk space and removing residual build caches..."
+sudo pacman -Rns $(pacman -Qtdq) --noconfirm || log "info" "No orphan packages to remove."
+yay -Sc --noconfirm
 
-# FTP support
-#sudo pacman -S install filezilla
+log "success" "🎉 All software packages processed successfully!"
+echo ""
 
-# p2p
-# qBittorrent
-sudo pacman -S qbittorrent
-# transmission
-#sudo pacman -S transmission-gtk
-
-# Firewall
-sudo pacman -S ufw
-
-# Handy tools
-sudo pacman -S net-tools-git
-
-# VPN stuff
-#yay -S qomui
-
-## Battery Laptop Tweak
-# Install the magic
-sudo pacman -S tlp
-# Make it happen
-sudo tlp start
-
-# Beautify tools
-# NUMiX
-#sudo apt-get install numix-gtk-theme numix-icon-theme numix-icon-theme-circle
-
-# Gotta reboot now:
-
-echo $'\n'$"*** Follow the white rabbit & reboot ***"
-exit
+# ==============================================================================
+# 8. INTERACTIVE REBOOT PROMPT
+# ==============================================================================
+read -p "🔄 Do you want to reboot the system now? (y/N): " response
+case "$response" in
+    [yY][eE][sS]|[yY]) 
+        log "warn" "🐇 *** Follow the white rabbit & reboot your machine now ***"
+        echo ""
+        sleep 2
+        sudo reboot
+        ;;
+    *)
+        log "info" "Reboot skipped. Please remember to reboot later to apply all configurations."
+        echo ""
+        ;;
+esac
