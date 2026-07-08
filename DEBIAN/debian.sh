@@ -1,6 +1,8 @@
 #!/bin/bash
 # ==============================================================================
 # 🐧 Debian Fresh Install Post-Setup Script
+# Author: pedro andrade - https://github.com/opedromandrade                       
+# Updated on: 07.2026                                                           
 # Description: Automates the installation of essential packages on Debian.
 # Guidance: Run this script with sudo. Rebooting after completion is advised.
 # ==============================================================================
@@ -174,12 +176,11 @@ log "info" "📦 Setting up Flatpak application framework..."
 apt install -y flatpak
 
 # Install the GNOME Software Flatpak plugin (common for most Debian environments)
-# If you use KDE, change 'gnome-software-plugin-flatpak' to 'plasma-discover-backend-flatpak'
 if apt-cache show gnome-software-plugin-flatpak > /dev/null 2>&1; then
     apt install -y gnome-software-plugin-flatpak
 fi
 
-# Add the official Flathub repository repository globally
+# Add the official Flathub repository remote universe
 log "info" "🌐 Adding Flathub repository remote universe..."
 flatpak remote-add --if-not-exists flathub https://flathub.org
 
