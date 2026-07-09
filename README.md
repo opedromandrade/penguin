@@ -1,6 +1,6 @@
 # 🐧 Penguin
 
-A curated collection of Linux configuration scripts built to make desktop transitions completely frictionless. Run them once, sit back, and chill. ☕
+A humble collection of Linux configuration scripts built to make new desktop runs completely frictionless. Run them once, sit back, and chill. ☕
 
 While this repository originally hosted just a few basic templates, it has grown to become the centralized hub for **ALL** my Linux deployment needs across multiple distributions.
 
