@@ -33,8 +33,8 @@ Tailored deployment frameworks specifically optimized for **Debian 13 (Trixie)**
 * 📄 `endeavour.sh` — Like `debian.sh`, it's a modernized, emoji-fied Arch-based automation file using `pacman` and `yay` to group core desktop dependencies cleanly. (probably deprecated)
 
 ### 🦝 Ubuntu
-Comprehensive deployment resources optimized specifically for Canonical's **Ubuntu 26.04 LTS**.
-* 📄 `ubuntu.sh` — Flagship post-install script. Rebuilt to set up an advanced, layered application architecture optimizing Flatpak runtimes over traditional system snaps.
+An easy deployment of resources, taylored specifically for **Ubuntu 26.04 LTS**.
+* 📄 `ubuntu.sh` — A post-install script. Rebuilt to set up an advanced, layered application architecture optimizing Flatpak runtimes over traditional system snaps.
 * 📂 `sources/` — Pristine repository templates structured in both classic `sources.list` and modern DEB822 `.sources` formats.
 
 ---
