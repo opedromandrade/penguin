@@ -23,14 +23,14 @@ Make sure your system is updated and you have `git` and `unzip` installed:
 
 ### 🌀 Debian
 Tailored deployment frameworks specifically optimized for **Debian 13 (Trixie)**.
-* 📄 `debian.sh` — The ultimate post-install routine. Installs core development toolchains, media codecs, and localization utilities.
-* 📄 `debian_bt.sh` — Seeds missing Bluetooth profiles and software wrappers, optimized for minimal environments like [XFCE](https://xfce.org).
+* 📄 `debian.sh` — My post-install routine. Installs core development toolchains, media codecs, and localization utilities.
+* 📄 `debian_bt.sh` — Installs missing Bluetooth profiles and software wrappers, optimized for minimal environments like [XFCE](https://xfce.org).
 * 📄 `debian_iPhone.sh` — Mounts and establishes immediate local subsystem communication tools for accessing iPhone filesystems natively.
 * 📄 `debian_zoom.sh` — Lightweight micro-script that cleanly pulls and wraps the official Zoom communications deb framework.
 * 📂 `sources/` — Up-to-date repository configurations supporting both classic and modern **DEB822** standard profiles.
 
 ### 🦅 EndeavourOS
-* 📄 `endeavour.sh` — Modernized, emoji-fied Arch-based automation file using `pacman` and `yay` to group core desktop dependencies cleanly.
+* 📄 `endeavour.sh` — Like `debian.sh`, it's a modernized, emoji-fied Arch-based automation file using `pacman` and `yay` to group core desktop dependencies cleanly. (probably deprecated)
 
 ### 🦝 Ubuntu
 Comprehensive deployment resources optimized specifically for Canonical's **Ubuntu 26.04 LTS**.
