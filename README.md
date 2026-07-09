@@ -11,9 +11,9 @@ While this repository originally hosted just a few basic templates, it has grown
 ## 🛠️ Prerequisites
 
 > [!WARNING]
-> **Look before you leap!** These scripts execute system-level changes. Always review the script contents manually before running them on your machine.
+> **Look before you leap!** These scripts execute system-level changes. Always review the script contents before running them on your machine.
 
-Make sure your system is updated and you have `git` or `unzip` installed:
+Make sure your system is updated and you have `git` and `unzip` installed:
 * **Debian/Ubuntu:** `sudo apt update && sudo apt install git unzip -y`
 * **EndeavourOS/Arch:** `sudo pacman -Syu git unzip`
 
